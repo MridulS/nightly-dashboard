@@ -1,0 +1,15 @@
+[project]
+name = "nightly-dashboard"
+version = "0.1.0"
+description = "Add a short description here"
+authors = ["Mridul Seth <git@mriduls.com>"]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64"]
+
+[tasks]
+render = "python render.py"
+
+[dependencies]
+python = "3.12.*"
+jinja2 = ">=3.1.4,<3.2"
+requests = ">=2.32.3,<2.33"
