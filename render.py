@@ -9,13 +9,16 @@ import requests
 from jinja2 import Environment, FileSystemLoader
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 # Constants
 GITLAB_API_URL = "https://git.esss.dk/api/v4"
 DMSC_NIGHTLY_PROJECT_ID = 301
 TOKEN = os.getenv("GITLAB_PRIVATE_TOKEN")
 TEAMS = ["ECDC", "SCIPP", "SWAT", "DST", "DONKI", "IDS"]
+
 
 # Data class for Job
 @dataclass
@@ -25,6 +28,7 @@ class Job:
     job_name: str
     job_stage: str
     teams: str
+
 
 # API Functions
 def get_pipelines(project_id):
@@ -37,8 +41,9 @@ def get_pipelines(project_id):
     pipelines = response.json()
     latest_pipeline = pipelines[0]
     # Get the last 50 pipeline ids
-    last_50_pipelines = [pipeline['id'] for pipeline in pipelines[:50]]
+    last_50_pipelines = [pipeline["id"] for pipeline in pipelines[:50]]
     return latest_pipeline, last_50_pipelines
+
 
 def get_jobs(project_id, pipeline_id):
     url = f"{GITLAB_API_URL}/projects/{project_id}/pipelines/{pipeline_id}/jobs?per_page=100"
@@ -46,6 +51,7 @@ def get_jobs(project_id, pipeline_id):
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()
+
 
 def get_test_report(project_id, pipeline_id):
     url = f"{GITLAB_API_URL}/projects/{project_id}/pipelines/{pipeline_id}/test_report"
@@ -55,6 +61,7 @@ def get_test_report(project_id, pipeline_id):
     # logging.info(f"Fetching test report from URL: {url}")
     return response.json()
 
+
 def main():
     pipeline, last_50 = get_pipelines(DMSC_NIGHTLY_PROJECT_ID)
     pipeline_id = pipeline["id"]
@@ -63,7 +70,9 @@ def main():
     success, failed, others = [], [], []
     for job in jobs:
         temp_teams = ", ".join(random.choices(TEAMS, k=2))
-        job_obj = Job(job["web_url"], job["status"], job["name"], job["stage"], temp_teams)
+        job_obj = Job(
+            job["web_url"], job["status"], job["name"], job["stage"], temp_teams
+        )
 
         if job["status"] == "success":
             success.append(job_obj)
@@ -75,16 +84,22 @@ def main():
 
     all_jobs = success + failed + others
     for job in all_jobs:
-        logging.info(f"Job: {job.job_name}, Status: {job.job_run_status}, URL: {job.job_run_url}, Stage: {job.job_stage}")
+        logging.info(
+            f"Job: {job.job_name}, Status: {job.job_run_status}, URL: {job.job_run_url}, Stage: {job.job_stage}"
+        )
 
     run_chart = []
     for pid in last_50:
         test_report = get_test_report(DMSC_NIGHTLY_PROJECT_ID, pid)
-        total_tests = test_report['total_count']
-        failed_tests = test_report['failed_count']
-        skipped_tests = test_report['skipped_count']
-        failed_job_percentage = (failed_tests / total_tests * 100) if total_tests else 0.0
-        run_chart.append((pid, total_tests, failed_job_percentage, failed_tests, skipped_tests))
+        total_tests = test_report["total_count"]
+        failed_tests = test_report["failed_count"]
+        skipped_tests = test_report["skipped_count"]
+        failed_job_percentage = (
+            (failed_tests / total_tests * 100) if total_tests else 0.0
+        )
+        run_chart.append(
+            (pid, total_tests, failed_job_percentage, failed_tests, skipped_tests)
+        )
 
     run_chart.reverse()
     # last_run_skipped_test
@@ -131,6 +146,7 @@ def main():
     with open(filename, mode="w", encoding="utf-8") as message:
         message.write(content)
         logging.info(f"... wrote {filename}")
+
 
 if __name__ == "__main__":
     main()
