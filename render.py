@@ -69,6 +69,7 @@ def main():
 
     success, failed, others = [], [], []
     for job in jobs:
+        # TODO: Map teams to jobs
         temp_teams = ", ".join(random.choices(TEAMS, k=2))
         job_obj = Job(
             job["web_url"], job["status"], job["name"], job["stage"], temp_teams
