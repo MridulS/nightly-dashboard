@@ -27,7 +27,7 @@ jobs:
         git checkout -b deploy-temp
         git add index.html custom.css ess.png favicon.ico
         git commit -m "Deployed on $(date -u '+%Y-%m-%d %H:%M:%S')"
-        git push -f origin deploy
+        git push -f origin deploy-temp:deploy
         git branch -D deploy-temp
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
