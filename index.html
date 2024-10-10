@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3600">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMSC Integration Testing</title>
+    <!-- <link href="tailwind.min.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/tailwind@2.4.1/dist/tailwind.min.js"></script> -->
+    <link rel="stylesheet" href="custom.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body class="flex flex-col h-screen bg-gray-100">
+    <header class="w-full flex justify-between items-center p-4 banner">
+        <img src="ess.png" alt="Logo">
+        <h1 class="text-xl font-bold text-white">DMSC Integration Testing</h1>
+        <span class="text-lg text-white">
+            Last updated: October 09, 2024 10:16 PM UTC
+        </span>
+    </header>
+    <main class="flex-1 p-8 sm:flex ">
+        <!-- Left Column -->
+        <div class="sm:w-1/6 p-4 bg-gray-200">
+            <div class="w-full p-4 bg-red-600 text-white text-center rounded">
+                Failed jobs: 5.66%
+            </div>
+            <br>
+            <div>
+                <table class="table-auto w-full">
+                    <tbody>
+                        
+                        <tr>
+                            <td class="border px-4 py-2">
+                                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45116" class="text-blue-500 hover:underline">nexusfiles-scipp-tests: [tbl, manual]</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="border px-4 py-2">
+                                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45114" class="text-blue-500 hover:underline">nexusfiles-scipp-tests: [nmx, manual]</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="border px-4 py-2">
+                                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45112" class="text-blue-500 hover:underline">nexusfiles-scipp-tests: [dream, manual]</a>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Center Column -->
+        <div class="sm:w-5/6 p-4">
+            <!-- <p class="mb-2.5 p-2 text-blue-500">
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly">dmsc-nightly/dmsc-nightly</a>
+            </p> -->
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-12 gap-2.5">
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45125" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        mcstas-scipp-tests: [nmx]<br>
+                        IDS, SWAT
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45124" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        scipp-analysis-tests: [odin]<br>
+                        IDS, SWAT
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45123" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        scipp-analysis-tests: [loki]<br>
+                        SWAT, DONKI
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45122" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        ingestor-tests: [tbl]<br>
+                        ECDC, IDS
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45121" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        ingestor-tests: [odin]<br>
+                        IDS, ECDC
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45120" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        ingestor-tests: [nmx]<br>
+                        SCIPP, ECDC
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45119" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        ingestor-tests: [loki]<br>
+                        IDS, SWAT
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45118" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        ingestor-tests: [dream]<br>
+                        DONKI, ECDC
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45117" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        ingestor-tests: [bifrost]<br>
+                        SWAT, SWAT
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45115" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        nexusfiles-scipp-tests: [odin, manual]<br>
+                        ECDC, SCIPP
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45113" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        nexusfiles-scipp-tests: [loki, manual]<br>
+                        DONKI, SWAT
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45111" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        nexusfiles-scipp-tests: [bifrost, manual]<br>
+                        IDS, DST
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45110" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        chexus-tests: [tbl, manual]<br>
+                        DST, ECDC
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45109" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        chexus-tests: [odin, manual]<br>
+                        ECDC, SCIPP
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45108" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        chexus-tests: [nmx, manual]<br>
+                        ECDC, IDS
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45107" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        chexus-tests: [loki, manual]<br>
+                        ECDC, IDS
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45106" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        chexus-tests: [dream, manual]<br>
+                        SCIPP, DST
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45105" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        chexus-tests: [bifrost, manual]<br>
+                        DONKI, ECDC
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45104" target="_blank" class="tooltip square-button-success">
+                    
+                    🚀
+                    
+                    <span class="tooltiptext">
+                        inspect-coda<br>
+                        DST, SWAT
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45116" target="_blank" class="tooltip square-button-failed">
+                    
+                    ⚡
+                    
+                    <span class="tooltiptext">
+                        nexusfiles-scipp-tests: [tbl, manual]<br>
+                        DST, IDS
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45114" target="_blank" class="tooltip square-button-failed">
+                    
+                    ⚡
+                    
+                    <span class="tooltiptext">
+                        nexusfiles-scipp-tests: [nmx, manual]<br>
+                        ECDC, IDS
+                    </span>
+                </a>
+                
+                <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/jobs/45112" target="_blank" class="tooltip square-button-failed">
+                    
+                    ⚡
+                    
+                    <span class="tooltiptext">
+                        nexusfiles-scipp-tests: [dream, manual]<br>
+                        SWAT, ECDC
+                    </span>
+                </a>
+                
+            </div>
+            <hr class="my-4 border-gray-900">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <canvas id="myChart" style="width:100%;max-width:700px">
+                        <script>
+                        const myChart = new Chart("myChart", {
+                            type: "line",
+                            data: {
+                                labels: [10636, 10637, 10690, 10706, 10726, 10734, 10736, 10737, 10743, 10751, 10753, 10755, 10756, 10757, 10766, 10767, 10768, 10770, 10771, 10772, 10774, 10776, 10779, 10786, 10796, 10808, 10813, 10814, 10815, 10819, 10822, 10841, 10881, 10902, 10912, 10914, 10915, 10916, 10927, 10928, 10935, 10936, 10965, 10973, 10974, 10975, 10977, 10979, 10982, 10984],
+                                datasets: [{
+                                    label: 'Failing Tests',
+                                    data: [0, 47, 12, 27, 27, 23, 23, 23, 6, 4, 2, 0, 0, 0, 0, 0, 0, 2, 6, 7, 2, 0, 0, 1, 1, 18, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                                    // backgroundColor: '#e41a1c',
+                                    borderColor: '#e41a1c',
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Tests',
+                                    data: [0, 57, 52, 53, 53, 53, 53, 53, 53, 53, 22, 0, 0, 0, 0, 0, 0, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 45, 0, 53, 53, 53, 53, 26, 0, 27, 0, 0, 2, 0, 51, 51, 51, 53, 53, 53, 53, 53, 53, 53],
+                                    borderColor: '#4daf4a',
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Skipped Tests',
+                                    data: [0, 0, 14, 14, 14, 15, 15, 15, 15, 15, 11, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 0, 15, 15, 15, 15, 14, 0, 15, 0, 0, 0, 0, 14, 14, 14, 15, 15, 15, 15, 15, 15, 15],
+                                    borderColor: '#FFFF00',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {}
+                          });
+                          </script>
+                    </canvas>
+                </div>
+                <div>
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">Test Suite</th>
+                                <th class="py-2 px-4 border-b">Skipped Test</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bbifrost%2C%20manual%5D>tests.nexusfiles-scipp.bifrost.bifrost_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bbifrost%2C%20manual%5D>test_can_unwrap_tof_from_raw_data</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bbifrost%2C%20manual%5D>tests.nexusfiles-scipp.bifrost.bifrost_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bbifrost%2C%20manual%5D>test_can_convert_nexus_data_to_wavelength</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bdream%2C%20manual%5D>tests.nexusfiles-scipp.dream.dream_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bdream%2C%20manual%5D>test_can_unwrap_tof_from_raw_data</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bdream%2C%20manual%5D>tests.nexusfiles-scipp.dream.dream_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bdream%2C%20manual%5D>test_can_convert_nexus_data_to_wavelength</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bloki%2C%20manual%5D>tests.nexusfiles-scipp.loki.loki_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bloki%2C%20manual%5D>test_can_convert_nexus_data_to_wavelength</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bloki%2C%20manual%5D>tests.nexusfiles-scipp.loki.loki_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bloki%2C%20manual%5D>test_can_unwrap_tof_from_raw_data</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bnmx%2C%20manual%5D>tests.nexusfiles-scipp.nmx.nmx_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bnmx%2C%20manual%5D>test_can_convert_nexus_data_to_wavelength</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bnmx%2C%20manual%5D>tests.nexusfiles-scipp.nmx.nmx_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bnmx%2C%20manual%5D>test_can_unwrap_tof_from_raw_data</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bodin%2C%20manual%5D>tests.nexusfiles-scipp.odin.odin_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bodin%2C%20manual%5D>test_can_unwrap_tof_from_raw_data</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bodin%2C%20manual%5D>tests.nexusfiles-scipp.odin.odin_reduction_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=nexusfiles-scipp-tests%3A%20%5Bodin%2C%20manual%5D>test_can_convert_nexus_data_to_wavelength</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=scipp-analysis-tests%3A%20%5Bodin%5D>tests.scipp-analysis.odin.easyimaging_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=scipp-analysis-tests%3A%20%5Bodin%5D>test_easyimaging_can_read_reduced_data</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=scipp-analysis-tests%3A%20%5Bodin%5D>tests.scipp-analysis.odin.easyimaging_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=scipp-analysis-tests%3A%20%5Bodin%5D>test_easyimaging_can_fit_bragg_edge</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=scipp-analysis-tests%3A%20%5Bodin%5D>tests.scipp-analysis.odin.muhrec_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=scipp-analysis-tests%3A%20%5Bodin%5D>test_pymuhrec_can_read_reduced_data</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=scipp-analysis-tests%3A%20%5Bodin%5D>tests.scipp-analysis.odin.muhrec_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=scipp-analysis-tests%3A%20%5Bodin%5D>test_pymuhrec_can_reconstruct</a></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=mcstas-scipp-tests%3A%20%5Bnmx%5D>tests.mcstas-scipp.mcstas_nmx_test</a></td>
+                                <td class="py-2 px-4 border-b" style="font-size: 14px;"><a href=https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/10984/test_report?job_name=mcstas-scipp-tests%3A%20%5Bnmx%5D>test_reduce_nmx_mcstas_file</a></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Right Column -->
+        <div class="sm:w-1/6 p-4 bg-gray-200">
+            <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines/" target="_blank">
+                <button class="w-full mb-2.5 p-2 text-white ess-button">DMSC Pipeline view</button>
+            </a>
+            <a href="https://git.esss.dk/dmsc-nightly/dmsc-nightly/-/pipelines//test_report" target="_blank">
+                <button class="w-full mb-2.5 p-2 bg-blue-500 text-white ess-button">GitLab Test Report</button>
+            </a>
+            <select class="w-full mb-2.5 p-2 bg-white border border-gray-300 rounded">
+                <option selected>Choose a team</option>
+                
+                <option>ECDC</option>
+                
+                <option>SCIPP</option>
+                
+                <option>SWAT</option>
+                
+                <option>DST</option>
+                
+                <option>DONKI</option>
+                
+                <option>IDS</option>
+                
+            </select>
+
+        </div>
+    </main>
+</body>
+</html>
